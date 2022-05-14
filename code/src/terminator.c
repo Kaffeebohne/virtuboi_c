@@ -1,6 +1,7 @@
 #include "terminator.h"
 
 static const int8_t * const saReasonLU[] = {
+    [eTermRegular] = "Beende Programm regulaer.",
     [eTermNoReason] = "Should NEVER happen.",
     [eTermNoRom] = "No ROM file provided.",
     [eTermInvalidRom] = "ROM file invalid.",
@@ -14,8 +15,14 @@ static void _message(FILE * s, int8_t * m) {
     fprintf(s, "%s\n", m);
 }
 
+static void _freeAll(void) {
+    for (uint8_t i = 0; i < 0x20; ++i)
+        eradicateContext(i);
+}
+
 void terminate(E_TermReason e) {
     fprintf(SERR, "%2d: %s\n", e, saReasonLU[e]);
+    fprintf(stderr, "Freeing all context pointers.\n");
     exit(-e);
 }
 

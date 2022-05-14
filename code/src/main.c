@@ -8,5 +8,7 @@
 
 int main(int argc, char ** argv) {
     (void) argc;
+    // TODO optarg command line arguments before
+    //      handing over the rom location
     return emu_run((int8_t **) ++argv);
 }

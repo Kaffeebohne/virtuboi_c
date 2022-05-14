@@ -22,6 +22,7 @@
 #endif
 
 typedef enum {
+    eTermRegular,
     eTermNoReason,
     eTermNoRom,
     eTermInvalidRom,

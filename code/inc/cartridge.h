@@ -5,9 +5,9 @@
 #define LEN(a,b) ((b) - (a) + 1)
 
 struct tagCartHeader {
-    uint8_t ucEntryPoint[4];
-    uint8_t ucNintendoLogo[0x30];
-    uint8_t ucTitle[16];
+    uint8_t ucaEntryPoint[4];
+    uint8_t ucaNintendoLogo[0x30];
+    uint8_t ucaTitle[16];
     int16_t usLicenseeCode;
     uint8_t ucSgbFlag;
     uint8_t ucCartType;
@@ -24,6 +24,7 @@ typedef struct {
     int8_t * sRomName;
     uint8_t * ucRomData;
     struct tagCartHeader tRomHeader;
+    uint8_t ucPID;
 } cartridge_context;
 
 uint8_t cartridge_load(char * f);

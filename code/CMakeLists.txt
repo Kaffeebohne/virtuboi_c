@@ -2,9 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 include_directories(src inc)
 
-file(GLOB H_FILES inc/*.h(pp)?)
-file(GLOB SRC_FILES src/*.c(pp)?)
-file(GLOB MAIN_FILE src/main.c)
+file(GLOB H_FILES inc/*.h)
+file(GLOB SRC_FILES src/*.c)
 
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 #if CMAKE_BUILD_TYPE == Debug || CMAKE_BUILD_TYPE == RelWithDebInfo

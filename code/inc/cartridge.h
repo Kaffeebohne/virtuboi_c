@@ -21,7 +21,6 @@ struct tagCartHeader {
 };
 
 typedef struct {
-    int8_t * sRomName;
     uint8_t * ucRomData;
     struct tagCartHeader tRomHeader;
     uint8_t ucPID;

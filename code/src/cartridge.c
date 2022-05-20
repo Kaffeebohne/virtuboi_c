@@ -65,19 +65,19 @@ uint8_t cartridge_load(char * f) {
 
     memset((void *) ctx.tRomHeader.ucaTitle, 0, 16);
 
-    FILE * fp = fopen(f, "r");
+    FILE * fp = fopen(f, "r"); // f = NULL is valid
     if (fp == NULL)
         terminate(eTermRomLoad);
 
     fseek(fp, 0x0100, SEEK_SET);
     read = fread((void *) &ctx.tRomHeader, 1, sizeof(struct tagCartHeader), fp);
     valid = read == sizeof(struct tagCartHeader);
-
+/*
     read = util_strlen(f);
     ctx.sRomName = (int8_t *) malloc(read + 1);
     memset((void *) ctx.sRomName, 0, read + 1);
     ctx.sRomName = (char * ) memcpy((void *) ctx.sRomName, (void *) f, read);
-
+*/
     read = 32 << ctx.tRomHeader.ucRomSize * 1 << 0x0a;
     ctx.ucRomData = (uint8_t *) malloc(read);
     memset((void *) ctx.ucRomData, 0, read);

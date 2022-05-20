@@ -28,6 +28,7 @@ typedef enum {
     eTermInvalidRom,
     eTermRomLoad,
     eTermCartridgeLoad,
+    eTermNoArgs,
 } E_TermReason;
 
 void terminate(E_TermReason e);

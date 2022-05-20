@@ -2,6 +2,7 @@
 
 static const int8_t * const saReasonLU[] = {
     [eTermRegular] = "Beende Programm regulaer.",
+    [eTermNoArgs] = "Behaviour for no command line arguments not implemented yet.",
     [eTermNoReason] = "Should NEVER happen.",
     [eTermNoRom] = "No ROM file provided.",
     [eTermInvalidRom] = "ROM file invalid.",
